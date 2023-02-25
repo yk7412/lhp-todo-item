@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import { Layout } from 'antd';
+import PageMenu from './layout/menu';
+import PageContent from './layout/content';
+import { useNavigate, useLocation, useParams, useSearchParams } from 'react-router-dom';
+const { Content, Sider } = Layout;
+
 
 function App() {
+    const navigate = useNavigate()
+    const location = useLocation()
+    const [search, setSearch] = useSearchParams()
+    const router = {...location, push: navigate, setSearch, search}
+  console.log(router, 'router')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout style={{ minHeight: '100vh' }}>
+      <Sider>
+        <PageMenu router={router} />
+      </Sider>
+      <Layout className="site-layout">
+        <Content>
+          <PageContent router={router} />
+        </Content>
+      </Layout>
+    </Layout>
   );
 }
 
