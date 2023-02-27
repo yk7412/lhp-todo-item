@@ -4,14 +4,14 @@ import { Layout } from 'antd';
 import PageMenu from './layout/menu';
 import PageContent from './layout/content';
 import { useNavigate, useLocation, useParams, useSearchParams } from 'react-router-dom';
-const { Content, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 
 
 function App() {
-    const navigate = useNavigate()
-    const location = useLocation()
-    const [search, setSearch] = useSearchParams()
-    const router = {...location, push: navigate, setSearch, search}
+  const navigate = useNavigate()
+  const location = useLocation()
+  const [search, setSearch] = useSearchParams()
+  const router = { ...location, push: navigate, setSearch, search }
   console.log(router, 'router')
 
   return (
@@ -19,8 +19,8 @@ function App() {
       <Sider>
         <PageMenu router={router} />
       </Sider>
-      <Layout className="site-layout">
-        <Content>
+      <Layout className="app-content">
+        <Content  >
           <PageContent router={router} />
         </Content>
       </Layout>

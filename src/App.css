@@ -12,3 +12,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+.app-header {
+  background-color: #fff !important;
+}
