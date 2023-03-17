@@ -18,8 +18,10 @@ const http = axios.create({
 http.interceptors.request.use(config => {
     // 自定义header，可添加项目token
     // config.headers.token = 'token';
+    const token = localStorage.getItem('token')
     config.headers = {
         // 'user-id': '20391',
+        token,
         ...config.headers
     }
     return config;
