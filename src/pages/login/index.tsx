@@ -18,9 +18,7 @@ const Login = props => {
     const register = async () => {
         await form.submit()
         const formValue = form.getFieldsValue()
-        console.log(formValue,'formValue')
         http.post('/users/create', {userName: formValue.userName, password: formValue.password}).then(res => {
-            console.log(res, 'resss');
         })
     }
 
@@ -28,7 +26,6 @@ const Login = props => {
         await form.submit()
         const formValue = form.getFieldsValue()
         http.post('/users/login', {userName: formValue.userName, password: formValue.password}).then(res => {
-            console.log(res, 'resss');
             // @ts-ignore
             if(res.code === 200) {
                 localStorage.setItem('token', res.data)

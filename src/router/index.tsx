@@ -8,7 +8,6 @@ import Login from '../pages/login';
 import NoPage from '../pages/noPage';
 
 const Routers = (props) => {
-    console.log(props,'routerprops')
     return (<Routes>
             {/* <Route path={pageUrl.login} element={<Login/>} ></Route> */}
             <Route path={pageUrl.list} element={<List {...props} />} ></Route>
