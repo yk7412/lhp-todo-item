@@ -3,6 +3,8 @@
 export const pageUrl = {
     /** 首页 */
     home: '/',
+    /** 病例页 */
+    case: '/case',
     /** 列表页 */
     list: '/list',
     /** 新建页 */

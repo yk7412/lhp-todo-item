@@ -15,17 +15,17 @@ function App() {
   const router = { ...location, push: navigate, setSearch, search }
   console.log(router, 'router')
 
-  useEffect(() => {
-    const token = localStorage.getItem('token')
-    if(!token) {
-      navigate('/login')
-    }
-  },[router?.pathname])
+  // useEffect(() => {
+  //   const token = localStorage.getItem('token')
+  //   if(!token) {
+  //     navigate('/login')
+  //   }
+  // },[router?.pathname])
 
-  const logOut = () => {
-    localStorage.removeItem('token')
-    navigate('/login')
-  }
+  // const logOut = () => {
+  //   localStorage.removeItem('token')
+  //   navigate('/login')
+  // }
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
@@ -35,7 +35,7 @@ function App() {
       <Layout className="app-content">
         <Header style={{backgroundColor: '#FFF'}} >
           <Space style={{float: 'right'}} >
-            <Button type='link' onClick={logOut} >退出登录</Button>
+            {/* <Button type='link' onClick={logOut} >退出登录</Button> */}
           </Space>
         </Header>
         <Content  >

@@ -1,0 +1,63 @@
+.Case {
+    display: flex;
+}
+
+.Case .form {
+    flex: 1;
+}
+
+.Case .form .Input {
+    display: inline-flex;
+    width: calc(100% / 3)
+}
+
+.Case .form .Input .ant-row {
+    display: block;
+    width: 100%;
+}
+
+.Case .classification {
+    width: 30%;
+}
+
+.Case .Classification {
+    display: flex;
+}
+
+.Case .Classification .ant-list-item {
+    cursor: pointer;
+}
+
+.Case .customInputBox {
+    
+}
+
+.Case .customInputBox .box {
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 4px 11px;
+    border-radius: 5px;
+    height: 60px;
+}
+
+.Case .customInputBox .box .Input {
+    
+}
+
+.Case .customInputBox .box .Input .ant-input {
+    border: none;
+}
+
+.Case .customInputBox .box .Input .ant-input-group-addon {
+    display: none;
+}
+
+.Case .customInputBox .box .item{
+    display: inline-block;
+    /* width: 20px; */
+    /* height: 10px; */
+    padding: 0px 5px;
+    background-color: rgb(184, 185, 184);
+    border-radius: 5px;
+    margin-right: 5px;
+}

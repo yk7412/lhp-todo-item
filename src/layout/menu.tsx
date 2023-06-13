@@ -15,7 +15,8 @@ const PageMenu = (props) => {
         { key: pageUrl.home, label: '首页', icon: <DesktopOutlined /> },
         {
             key: 'my', label: '我的', icon: <FileOutlined />, children: [
-                { key: pageUrl.list, label: '我的待办', icon: <PieChartOutlined /> }
+                { key: pageUrl.list, label: '我的待办', icon: <PieChartOutlined /> },
+                { key: pageUrl.case, label: '病例', icon: <PieChartOutlined /> }
             ]
         },
         // { key: pageUrl.login, label: '登录', icon: <TeamOutlined /> },
