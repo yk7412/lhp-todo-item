@@ -5,6 +5,9 @@ export const pageUrl = {
     home: '/',
     /** 列表页 */
     list: '/list',
+    /** 新建页 */
+    listCreate: '/create',
     /** 登录页 */
     login: '/login'
 }
+

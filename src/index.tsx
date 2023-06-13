@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { BrowserRouter, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './pages/login';
+import NoPage from './pages/noPage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -10,7 +12,10 @@ const root = ReactDOM.createRoot(
 root.render(
   // <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <Routes>
+      <Route path={'/login'} element={<Login/>} ></Route>
+      <Route path={'/*'} element={<App/>} ></Route>
+      </Routes>
     </BrowserRouter>
   // </React.StrictMode>
 );

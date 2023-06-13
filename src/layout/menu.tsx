@@ -18,11 +18,11 @@ const PageMenu = (props) => {
                 { key: pageUrl.list, label: '我的待办', icon: <PieChartOutlined /> }
             ]
         },
-        { key: pageUrl.login, label: '登录', icon: <TeamOutlined /> },
+        // { key: pageUrl.login, label: '登录', icon: <TeamOutlined /> },
     ]
 
     const onClick = (item) => {
-        router.push(`${item.key}?key=${item.key}`, {
+        router.push(`${item.key}`, {
             state: {
                 url: item.key
             }
