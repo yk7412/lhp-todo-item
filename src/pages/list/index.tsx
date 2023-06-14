@@ -5,19 +5,24 @@ import MergeTable from '../../components/mergeTable';
 import http from '../../utils/http';
 
 const List = (props) => {
+    const onSearch = async (searchParams) => {
+        return []
+    }
+
+    const column = [
+        {title: '任务', key: 'name', dataIndex: 'name'},
+        {title: '状态', key: 'status', dataIndex: 'status'},
+        {title: '开始时间', key: 'startTime', dataIndex: 'startTime'},
+        {title: '结束时间', key: 'endTime', dataIndex: 'endTime'},
+    ]
     return <div className="list">
-        {/* <div className="listHeader">
-            <h1>我的待办</h1>
-            <div className="buttons">
-                <Button onClick={() => {props.router.push('/create')}} >新建</Button>
-            </div>
-        </div> */}
-        {/* <MergeTable/> */}
         <ListLayout
             title='我的待办'
             headerButton={[
                 {text: '新建', onClick: () => {props.router.push('/create')}}
             ]}
+            tableColumn={column}
+            onSearch={onSearch}
         />
     </div>
 }

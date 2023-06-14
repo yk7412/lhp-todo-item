@@ -1,12 +1,25 @@
-import './index.less'
-import { Button, Layout, Space } from "antd";
+import './index.scss'
+import { Button, Layout, Space, Table } from "antd";
+import { useEffect, useState } from 'react';
 const { Header, Content } = Layout;
 
 const ListLayout = ({
     title = '',
     headerButton = [],
+    tableColumn = [],
+    onSearch,
     ...otherProps
 }) => {
+
+    const [tableData, setTableData] = useState([])
+
+    const handleSearch = async (params = {}) => {
+        setTableData(await onSearch(params))
+    }
+
+    useEffect(() => {
+        handleSearch()
+    }, [])
     return <Layout className="ListLayout">
         <Header className="ListLayout-Header" >
             <h3>{title}</h3>
@@ -16,7 +29,12 @@ const ListLayout = ({
                 })}
             </Space>
         </Header>
-        <Content></Content>
+        <Content>
+            <Table
+                columns={tableColumn}
+                dataSource={tableData}
+            />
+        </Content>
     </Layout>
 }
 
