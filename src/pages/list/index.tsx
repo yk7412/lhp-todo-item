@@ -6,7 +6,9 @@ import http from '../../utils/http';
 
 const List = (props) => {
     const onSearch = async (searchParams) => {
-        return []
+        const res = await http.get('/list')
+        console.log(res,'ressssss')
+        return res.data
     }
 
     const column = [
