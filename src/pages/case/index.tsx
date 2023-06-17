@@ -54,6 +54,7 @@ const Case = () => {
 // test4
 // test5
 // test2-1
+// test2-2
 
 // 右侧病例列表
 const Classification = ({form}: {form:  FormInstance<any>}) => {
