@@ -3,7 +3,9 @@ import './content.scss'
 
 const PageContent = (props) => {
     return <div className="PageContent" style={{height: '100%'}} >
-        <Routers {...props} />
+        <div className="PageContent-main" >
+            <Routers {...props} />
+        </div>
     </div>
 }
 

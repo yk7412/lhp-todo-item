@@ -6,11 +6,11 @@ import List from '../pages/list'
 import Case from '../pages/case'
 import ListCreate from '../pages/list/create';
 import Login from '../pages/login';
+import Register from '../pages/register';
 import NoPage from '../pages/noPage';
 
 const Routers = (props) => {
     return (<Routes>
-            {/* <Route path={pageUrl.login} element={<Login/>} ></Route> */}
             <Route path={pageUrl.case} element={<Case {...props} />} ></Route>
             <Route path={pageUrl.list} element={<List {...props} />} ></Route>
             <Route path={pageUrl.home} element={<Home {...props} />} ></Route>

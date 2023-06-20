@@ -1,6 +1,13 @@
 
 .PageContent {
-    margin: 5px;
+    padding: 10px;
     border-radius: 4px;
     overflow: hidden;
+
+    .PageContent-main {
+        height: 100%;
+        background-color: #FFF;
+        border-radius: 4px;
+        padding: 10px;
+    }
 }

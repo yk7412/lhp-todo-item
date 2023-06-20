@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Cookies from 'js-cookie'
 
 // 创建一个独立的axios实例
 const http = axios.create({ 
@@ -18,12 +19,15 @@ const http = axios.create({
 http.interceptors.request.use(config => {
     // 自定义header，可添加项目token
     // config.headers.token = 'token';
-    const token = localStorage.getItem('token')
+    // const token = localStorage.getItem('token')
+    const token = Cookies.get('jwt_token')
+    
     config.headers = {
         // 'user-id': '20391',
-        token,
-        ...config.headers
+        ...config.headers,
+        token
     }
+    // console.log(token, config,'cookie')
     return config;
 });
 // 返回拦截
