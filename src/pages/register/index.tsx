@@ -3,6 +3,7 @@ import { useNavigate, useLocation, useParams, useSearchParams } from 'react-rout
 import http from "../../utils/http";
 import '../login/index.scss'
 import { ERROR, SUCCESS } from "../../config/name";
+import { userRegister } from "../../config/api/user";
 
 const Register = () => {
 
@@ -16,19 +17,15 @@ const Register = () => {
     const register = async () => {
         await form.submit()
         const formValue = form.getFieldsValue()
-        http.post('/users/create', {userName: formValue.userName, password: formValue.password}).then(res => {
-            if(res.status) {
-                message.success(res.statusText || SUCCESS)
+        const res = await userRegister({ userName: formValue.userName, password: formValue.password })
+            if(res.code === 200) {
                 navigate('/login')
-            }else {
-                message.error(res.statusText || ERROR)
             }
-        })
     }
 
     const validator = (_, value) => {
         const password = form.getFieldValue('password')
-        if(value !== password) {
+        if (value !== password) {
             return Promise.reject(new Error('与第一次密码不同'))
         }
         return Promise.resolve()

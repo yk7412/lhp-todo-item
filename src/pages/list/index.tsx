@@ -3,12 +3,17 @@ import { useNavigate, useLocation, useParams, useSearchParams } from 'react-rout
 import ListLayout from '../../components/listLayout';
 import MergeTable from '../../components/mergeTable';
 import http from '../../utils/http';
+import { getTodoList } from '../../config/api/todo';
 
 const List = (props) => {
     const onSearch = async (searchParams) => {
-        const res = await http.get('/list')
+        const res = await getTodoList()
         console.log(res,'ressssss')
-        return res.data
+        if(res.code === 200) {
+            return res.data
+        }else {
+            return []
+        }
     }
 
     const column = [
