@@ -10,6 +10,11 @@ export const pageUrl = {
     /** 新建页 */
     listCreate: '/create',
     /** 登录页 */
-    login: '/login'
+    login: '/login',
+    /** 注册页 */
+    register: '/register'
 }
 
+export const SUCCESS = 'success'
+
+export const ERROR = 'error'

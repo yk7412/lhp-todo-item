@@ -5,6 +5,7 @@ import PageMenu from './layout/menu';
 import PageContent from './layout/content';
 import { useNavigate, useLocation, useParams, useSearchParams } from 'react-router-dom';
 import http from './utils/http';
+import Cookies from 'js-cookie'
 const { Header, Content, Sider } = Layout;
 
 
@@ -15,17 +16,19 @@ function App() {
   const router = { ...location, push: navigate, setSearch, search }
   console.log(router, 'router')
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem('token')
-  //   if(!token) {
-  //     navigate('/login')
-  //   }
-  // },[router?.pathname])
+  useEffect(() => {
+    // const token = localStorage.getItem('token')
+    const token = Cookies.get('jwt_token')
+    if(!token) {
+      navigate('/login')
+    }
+  },[router?.pathname])
 
-  // const logOut = () => {
-  //   localStorage.removeItem('token')
-  //   navigate('/login')
-  // }
+  const logOut = () => {
+    // localStorage.removeItem('token')
+    Cookies.remove('jwt_token')
+    navigate('/login')
+  }
 
   // test1
 
@@ -37,7 +40,8 @@ function App() {
       <Layout className="app-content">
         <Header style={{backgroundColor: '#FFF'}} >
           <Space style={{float: 'right'}} >
-            {/* <Button type='link' onClick={logOut} >退出登录</Button> */}
+            <span>{Cookies.get('userName')}</span>
+            <Button type='link' onClick={logOut} >退出登录</Button>
           </Space>
         </Header>
         <Content  >

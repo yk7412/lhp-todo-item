@@ -5,6 +5,8 @@ import App from './App';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/login';
 import NoPage from './pages/noPage';
+import { pageUrl } from './config/name';
+import Register from './pages/register';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -13,7 +15,8 @@ root.render(
   // <React.StrictMode>
     <BrowserRouter>
       <Routes>
-      <Route path={'/login'} element={<Login/>} ></Route>
+      <Route path={pageUrl.login} element={<Login/>} ></Route>
+      <Route path={pageUrl.register} element={<Register/>} ></Route>
       <Route path={'/*'} element={<App/>} ></Route>
       </Routes>
     </BrowserRouter>

@@ -13,7 +13,7 @@ const ListCreate = props => {
             ]
         }
     ]
-    return <div className="ListCreate">
+    return <div className="ListCreate" style={{height: '100%'}} >
         <FormLayout
             blockList={blockList}
         />

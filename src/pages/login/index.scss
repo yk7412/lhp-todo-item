@@ -1,0 +1,48 @@
+.Login,
+.Register {
+    height: 100%;
+
+    .ant-layout {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .ant-form,
+        .ant-layout-footer {
+            background-color: #FFF;
+        }
+
+        .ant-form {
+            width: 30%;
+            border-radius: 10px;
+            padding: 0 5% 2% 5%;
+
+            h1 {
+                padding: 30% 0;
+                text-align: center;
+            }
+
+            .ant-layout-content {
+                .ant-form-item {
+                    .ant-form-item-label {
+                        width: 25%;
+                    }
+                }
+            }
+        }
+
+        .ant-layout-footer {
+            display: flex;
+            justify-content: space-around;
+            padding: 24px 0;
+            position: relative;
+
+            .register {
+                position: absolute;
+                right: -10%;
+                bottom: -15%;
+            }
+        }
+    }
+}
