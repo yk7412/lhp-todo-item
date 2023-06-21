@@ -12,7 +12,11 @@ export const pageUrl = {
     /** 登录页 */
     login: '/login',
     /** 注册页 */
-    register: '/register'
+    register: '/register',
+    /** 记录页 */
+    record: '/record',
+    /** 记录页-默认 */
+    default: '/record/default'
 }
 
 export const SUCCESS = 'success'
