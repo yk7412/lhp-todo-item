@@ -10,6 +10,15 @@ export const pageUrl = {
     /** 新建页 */
     listCreate: '/create',
     /** 登录页 */
-    login: '/login'
+    login: '/login',
+    /** 注册页 */
+    register: '/register',
+    /** 记录页 */
+    record: '/record',
+    /** 记录页-默认 */
+    default: '/record/default'
 }
 
+export const SUCCESS = 'success'
+
+export const ERROR = 'error'

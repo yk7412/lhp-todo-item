@@ -1,4 +1,5 @@
 import { Form, Input, Button } from 'antd'
+import './index.scss'
 
 const FormLayout = props => {
     const { blockList } = props
@@ -14,7 +15,7 @@ const FormLayout = props => {
                             <h3>{title}</h3>
                             {fieldList && fieldList.map(fieldItem => {
                                 const { name, label, ...otherFieldItem } = fieldItem
-                                return <Form.Item name={name} label={label} style={{width: 'calc(100% / 3)', display: 'inline-flex'}} >
+                                return <Form.Item name={name} label={label} style={{ width: 'calc(100% / 3)', display: 'inline-flex' }} >
                                     <ComponentFormat {...otherFieldItem} />
                                 </Form.Item>
                             })}
