@@ -4,11 +4,11 @@ import Cookies from 'js-cookie'
 // 创建一个独立的axios实例
 const http = axios.create({ 
     // 设置baseUr地址,如果通过proxy跨域可直接填写base地址
-    baseURL: 'http://localhost:9000/',
+    // baseURL: 'http://localhost:9000/',
     // baseURL: 'http://64.176.9.31:9000/',
     // 定义统一的请求头部
     headers: {
-       "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+       "Content-Type": "application/json;charset=UTF-8"
     },
     // 配置请求超时时间
     timeout: 30000, 

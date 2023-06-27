@@ -7,19 +7,25 @@ import Login from './pages/login';
 import NoPage from './pages/noPage';
 import { pageUrl } from './config/name';
 import Register from './pages/register';
+import store from './redux/store';
+import { Provider } from 'react-redux';
+import 'antd/dist/antd.css';
+import '@formily/antd/dist/antd.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   // <React.StrictMode>
+  <Provider store={store} >
     <BrowserRouter>
       <Routes>
-      <Route path={pageUrl.login} element={<Login/>} ></Route>
-      <Route path={pageUrl.register} element={<Register/>} ></Route>
-      <Route path={'/*'} element={<App/>} ></Route>
+        <Route path={pageUrl.login} element={<Login />} ></Route>
+        <Route path={pageUrl.register} element={<Register />} ></Route>
+        <Route path={'/*'} element={<App />} ></Route>
       </Routes>
     </BrowserRouter>
+  </Provider>
   // </React.StrictMode>
 );
 

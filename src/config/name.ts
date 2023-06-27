@@ -14,9 +14,15 @@ export const pageUrl = {
     /** 注册页 */
     register: '/register',
     /** 记录页 */
-    record: '/record',
+    notebook: '/notebook',
     /** 记录页-默认 */
-    default: '/record/default'
+    default: '/notebook/default',
+    /** 控制台 */
+    control: '/control',
+    /** 控制台-笔记本 */
+    controlNotebook: '/control/notebook',
+    /** 控制台-笔记本新增 */
+    controlNotebookCreate: '/control/notebook/create'
 }
 
 export const SUCCESS = 'success'

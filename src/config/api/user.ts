@@ -3,6 +3,7 @@ import http from "../../utils/http"
 import Cookies from 'js-cookie'
 import { ERROR, SUCCESS } from "../name"
 import { AxiosResponse } from 'axios'
+import { base } from "./url"
 
 export interface responseType extends AxiosResponse {
     code: number
@@ -22,12 +23,12 @@ export const responseCallback: (res: any, msgFlag?: boolean) => responseType = (
 
 /** 用户登录 */
 export const userLogin = async (params: {userName: string, password: string}) => {
-    const res = await http.post('/users/login', {userName: params.userName, password: params.password})
+    const res = await http.post(base.login, {userName: params.userName, password: params.password})
     return responseCallback(res)
 }
 
 /** 用户注册 */
 export const userRegister = async (params: {userName: string, password: string}) => {
-    const res = await http.post('/users/create', {userName: params.userName, password: params.password})
+    const res = await http.post(base.register, {userName: params.userName, password: params.password})
     return responseCallback(res)
 }
